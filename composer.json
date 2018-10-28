@@ -1,0 +1,22 @@
+{
+  "name": "aradiv/yii2-authclient-telegram",
+  "description": "Telegram Auth for yii2-authclient",
+  "keywords": ["yii2", "authclient", "oauth", "telegram"],
+  "homepage": "http://github.com/aradiv/yii2-authclient-telegram",
+  "require": {
+    "php": "^7.0",
+    "yiisoft/yii2-authclient": "~2.1"
+  },
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Eric Brüggemann (Aradiv)",
+      "email": "develop@aradiv.de"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "aradiv\\yii2\\authclient\\telegram\\": "src"
+    }
+  }
+}
