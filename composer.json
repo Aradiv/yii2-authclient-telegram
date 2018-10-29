@@ -4,8 +4,7 @@
   "keywords": ["yii2", "authclient", "oauth", "telegram"],
   "homepage": "http://github.com/aradiv/yii2-authclient-telegram",
   "require": {
-    "php": "^7.0",
-    "yiisoft/yii2-authclient": "~2.1"
+    "yiisoft/yii2-authclient": "~2.1.0"
   },
   "license": "MIT",
   "authors": [
@@ -16,7 +15,7 @@
   ],
   "autoload": {
     "psr-4": {
-      "aradiv\\yii2\\authclient\\telegram\\": "src"
+      "aradiv\\yii2\\authclient\\telegram\\": ""
     }
   }
 }
