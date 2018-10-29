@@ -2,11 +2,18 @@
 namespace aradiv\yii2\authclient\telegram;
 
 use Yii;
+use yii\authclient\OAuth1;
+use yii\authclient\OAuth2;
+use yii\authclient\OAuthToken;
+use yii\authclient\OpenId;
 use yii\base\Exception;
+use yii\authclient\BaseClient;
+use yii\helpers\Url;
 
-class Telegram extends yii\authclient\BaseClient {
+class Telegram extends OAuth2 {
 
     public $token;
+    public $botid;
     public $maxTimeout = 60*60;
 
     public function initUserAttributes(){
@@ -22,6 +29,35 @@ class Telegram extends yii\authclient\BaseClient {
         }else{
             throw new Exception('Data is NOT from Telegram');
         }
+    }
+    /**
+     * {@inheritdoc}
+     */
+    protected function defaultName()
+    {
+        return 'telegram';
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function defaultTitle()
+    {
+        return 'Telegram';
+    }
+
+    protected function defaultViewOptions()
+    {
+        return [
+            'popupWidth' => 860,
+            'popupHeight' => 480,
+        ];
+    }
+
+    public function buildAuthUrl(array $params = [])
+    {
+        return 
+"https://oauth.telegram.org/auth?bot_id=".$this->botid."&origin=".urlencode(Url::base(true));
     }
 
     private function checkData($hash,$userdata){
