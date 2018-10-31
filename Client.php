@@ -1,7 +1,7 @@
 <?php
 namespace aradiv\yii2\authclient\telegram;
 
-    use yii\authclient\OAuth2;
+use yii\authclient\OAuth2;
 
 class Client extends OAuth2 {
 
@@ -55,8 +55,4 @@ class Client extends OAuth2 {
             'Authorization' => sprintf('Bearer %s', $accessToken->getToken()),
         ]);
     }
-
-}
-
-
 }
